@@ -15,7 +15,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
             node-version: 4
-      - name: Super-Linter
-        uses: github/super-linter@v4.9.2
-        env: 
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run ts
+      - run: npm run dev
+

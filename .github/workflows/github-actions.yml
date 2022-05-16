@@ -16,6 +16,5 @@ jobs:
         with:
             node-version: 4
       - run: npm install
-      - run: npm start
-      - run: npm build
+      - run: npm test
 

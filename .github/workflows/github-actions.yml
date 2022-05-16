@@ -15,6 +15,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
             node-version: 4
-      - run: npm install
-      - run: npm run dev
+      - name: Build and Push Docker Image
+        uses: mr-smithers-excellent/docker-build-push@v4
+        with:
+            image: jordillaveria/seminari-12
+            registry: docker.io
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}
 

@@ -15,20 +15,6 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       
-      - name: Set up Node
-        uses: actions/setup-node@v1
-        with:
-            node-version: 4
-      - run: npm install
-
-      - name: Super-Linter
-        uses: github/super-linter@v4.9.2
-        env: 
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: npm install
-      - run: npm test
-
-
       - name: Build and Push Docker Image
         uses: mr-smithers-excellent/docker-build-push@v4
         with:
